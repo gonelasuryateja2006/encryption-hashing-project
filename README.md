@@ -1,53 +1,80 @@
-# Encryption and Hashing Techniques
+# 🔐 Encryption and Hashing Techniques
 
-## Project Objective
-This project demonstrates fundamental concepts of encryption and hashing through interactive browser-based examples. It is designed as a polished academic showcase for learning cryptographic techniques without using a backend or database.
+## 🚀 Project Overview
 
-## Technologies Used
-- HTML5
-- CSS3
-- JavaScript
-- Web Crypto API
+Encryption and Hashing Techniques is an interactive browser-based cybersecurity project designed to demonstrate fundamental concepts of encryption and hashing algorithms.
 
-## Encryption Algorithms
-- Caesar Cipher
-- Vigenère Cipher
-- AES-256-GCM
+The project provides a simple and user-friendly interface where users can experiment with different cryptographic techniques directly in their browser without requiring a backend or database.
 
-## Hashing Algorithms
-- SHA-256
-- MD5
+## 🎯 Objective
 
-## Features
-- Responsive dark cybersecurity design
-- Sticky navigation with smooth scrolling
-- Interactive Caesar and Vigenère encryption/decryption
-- AES-256-GCM browser-side encryption using PBKDF2 and secure IV/salt
-- SHA-256 hash generation via Web Crypto API
-- Local MD5 hash implementation in JavaScript
-- Copy-to-clipboard buttons
-- Clear buttons and input validation
-- Toast notifications and password visibility toggle
-- Technical details section for AES operations
+The main objective of this project is to provide an interactive learning platform for understanding encryption, decryption, and hashing techniques.
 
-## How to Run
-1. Open the `encryption-hashing-project` folder in VS Code.
-2. Open `index.html` in a modern browser such as Chrome, Edge, or Firefox.
-3. Use the navigation links to explore the sections.
+It demonstrates both classical and modern cryptographic methods through practical browser-based examples.
 
-## Security Disclaimer
-This webpage is an educational demonstration of cryptographic concepts. It runs primarily in the browser and should not be treated as a production-grade encryption system.
-- Caesar Cipher is a classical educational cipher.
-- Vigenère Cipher is a classical educational cipher.
-- AES-GCM is a modern authenticated encryption method.
-- SHA-256 is a modern cryptographic hash function.
-- MD5 is obsolete for security-sensitive applications.
+## 📊 Cryptographic Techniques
 
-## Project Structure
-```
+### 🔐 Encryption Algorithms
+
+- 🔄 Caesar Cipher
+- 🔑 Vigenère Cipher
+- 🛡️ AES-256-GCM
+
+### #️⃣ Hashing Algorithms
+
+- 🔒 SHA-256
+- 🔢 MD5
+
+## ✨ Features Included
+
+### 🔄 Classical Encryption
+
+- Caesar Cipher encryption and decryption
+- Vigenère Cipher encryption and decryption
+- Interactive input and output fields
+- Input validation
+
+### 🛡️ AES-256-GCM Encryption
+
+- AES-256-GCM encryption and decryption
+- PBKDF2-based key derivation
+- Secure salt generation
+- Secure IV generation
+- Password visibility toggle
+- Browser-based encryption using Web Crypto API
+
+### #️⃣ Hashing
+
+- SHA-256 hash generation
+- MD5 hash generation
+- Copy hash output
+- Easy-to-use hash interface
+
+### 🎨 User Interface
+
+- 🌙 Responsive dark cybersecurity theme
+- 📱 Responsive design
+- 🧭 Sticky navigation
+- 🔗 Smooth scrolling
+- 📋 Copy-to-clipboard functionality
+- 🧹 Clear buttons
+- 🔔 Toast notifications
+- ✅ Input validation
+
+## 🛠️ Technologies Used
+
+- 🌐 HTML5
+- 🎨 CSS3
+- ⚡ JavaScript
+- 🔐 Web Crypto API
+
+## 📁 Project Structure
+
+```text
 encryption-hashing-project/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+│
+├── 📄 index.html
+├── 📄 style.css
+├── 📄 script.js
+├── 🖼️ SRM-logo.png
+└── 📄 README.md
