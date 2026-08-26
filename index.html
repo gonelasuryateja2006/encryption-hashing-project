@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRYPTO LAB-SRM • Encryption and Hashing Techniques</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero-panel" id="home">
+      <nav class="nav-bar">
+        <div class="brand">
+          <img src="SRM-logo.png" alt="SRM Institute of Science and Technology logo" class="brand-logo" />
+          <div>
+            <h1>CRYPTO LAB-SRM</h1>
+            <p>Interactive Encryption &amp; Hashing Demonstrator</p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#encryption">Encryption</a></li>
+          <li><a href="#hashing">Hashing</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">Cybersecurity Lab</span>
+          <h2>Encryption &amp; Hashing Techniques</h2>
+          <p>Explore how data is encrypted, decrypted, and transformed into secure hash values.</p>
+          <div class="hero-actions">
+            <a class="hero-btn" href="#encryption">Explore Encryption</a>
+            <a class="hero-btn secondary" href="#hashing">Explore Hashing</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="flow-card">
+            <span>Plaintext</span>
+            <span class="flow-arrow">↓</span>
+            <span>Cryptographic Algorithm</span>
+            <span class="flow-arrow">↓</span>
+            <span>Secure Output</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section intro-panel" id="intro">
+        <div class="section-header">
+          <span>Foundations</span>
+          <h2>What is Encryption? What is Hashing?</h2>
+        </div>
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>What is Encryption?</h3>
+            <p>Encryption converts readable plaintext into ciphertext with an algorithm and key. Authorized users can decrypt ciphertext back into the original plaintext with the correct key.</p>
+          </article>
+          <article class="intro-card">
+            <h3>What is Hashing?</h3>
+            <p>Hashing converts input data into a fixed-length hash value. It is designed to be one-way so the original input cannot be recovered from the hash.</p>
+          </article>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">SRM</div>
+            <h4>Encryption</h4>
+            <ul>
+              <li>Reversible with the appropriate key</li>
+              <li>Uses keys</li>
+              <li>Provides confidentiality</li>
+              <li>Example: AES</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">SRM</div>
+            <h4>Hashing</h4>
+            <ul>
+              <li>Designed to be one-way</li>
+              <li>No decryption process</li>
+              <li>Used for integrity and verification</li>
+              <li>Example: SHA-256</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="encryption">
+        <div class="section-header">
+          <span>Encryption</span>
+          <h2>Encryption Methods</h2>
+        </div>
+        <div class="method-tabs" role="tablist">
+          <button class="tab-button active" data-tab="caesar">Caesar Cipher</button>
+          <button class="tab-button" data-tab="vigenere">Vigenère Cipher</button>
+          <button class="tab-button" data-tab="aes">AES-256-GCM</button>
+        </div>
+
+        <div class="tab-panel active" id="caesar">
+          <div class="method-grid">
+            <div class="method-form">
+              <label>Message</label>
+              <textarea id="caesar-message" placeholder="Enter text"></textarea>
+              <div class="field-row">
+                <label>Shift</label>
+                <input id="caesar-shift" type="number" value="3" />
+              </div>
+              <div class="field-row counter-row"><span id="caesar-count">0 characters</span></div>
+              <div class="button-row">
+                <button id="caesar-encrypt">Encrypt</button>
+                <button id="caesar-decrypt" class="secondary">Decrypt</button>
+                <button id="caesar-clear" class="ghost">Clear</button>
+              </div>
+            </div>
+            <div class="method-output">
+              <h4>Result</h4>
+              <textarea id="caesar-result" readonly placeholder="Encrypted/Decrypted Result"></textarea>
+              <button data-copy="caesar-result" class="copy-btn">Copy Result</button>
+            </div>
+          </div>
+          <div class="visual-explanation">
+            <span>Plaintext</span>
+            <span class="flow-arrow">↓</span>
+            <span>Character Shift</span>
+            <span class="flow-arrow">↓</span>
+            <span>Ciphertext</span>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="vigenere">
+          <div class="method-grid">
+            <div class="method-form">
+              <label>Message</label>
+              <textarea id="vigenere-message" placeholder="Enter text"></textarea>
+              <label>Key</label>
+              <input id="vigenere-key" type="text" placeholder="Enter key" />
+              <div class="field-row counter-row"><span id="vigenere-count">0 characters</span></div>
+              <div class="button-row">
+                <button id="vigenere-encrypt">Encrypt</button>
+                <button id="vigenere-decrypt" class="secondary">Decrypt</button>
+                <button id="vigenere-clear" class="ghost">Clear</button>
+              </div>
+            </div>
+            <div class="method-output">
+              <h4>Result</h4>
+              <textarea id="vigenere-result" readonly placeholder="Encrypted/Decrypted Result"></textarea>
+              <button data-copy="vigenere-result" class="copy-btn">Copy Result</button>
+            </div>
+          </div>
+          <div class="visual-explanation">
+            <span>Plaintext + Key</span>
+            <span class="flow-arrow">↓</span>
+            <span>Vigenère Cipher</span>
+            <span class="flow-arrow">↓</span>
+            <span>Ciphertext</span>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="aes">
+          <div class="method-grid">
+            <div class="method-form">
+              <label>Message</label>
+              <textarea id="aes-message" placeholder="Enter text"></textarea>
+              <label>Password</label>
+              <div class="password-row">
+                <input id="aes-password" type="password" placeholder="Enter password" />
+                <button id="aes-toggle" type="button" class="ghost small-btn">Show</button>
+              </div>
+              <div class="field-row counter-row"><span id="aes-count">0 characters</span></div>
+              <div class="button-row">
+                <button id="aes-encrypt">Encrypt</button>
+                <button id="aes-decrypt" class="secondary">Decrypt</button>
+                <button id="aes-clear" class="ghost">Clear</button>
+              </div>
+            </div>
+            <div class="method-output">
+              <h4>Ciphertext</h4>
+              <textarea id="aes-result" placeholder="Ciphertext will appear here"></textarea>
+              <button data-copy="aes-result" class="copy-btn">Copy Ciphertext</button>
+            </div>
+          </div>
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <ul>
+              <li><strong>Algorithm:</strong> AES-256-GCM</li>
+              <li><strong>Key derivation:</strong> PBKDF2 with SHA-256</li>
+              <li><strong>IV:</strong> <span id="aes-iv">n/a</span></li>
+              <li><strong>Salt:</strong> <span id="aes-salt">n/a</span></li>
+            </ul>
+            <p class="discla<im>er">This is an educational browser-side demonstration and not a production password-encryption system.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" id="hashing">
+        <div class="section-header">
+          <span>Hashing</span>
+          <h2>Hashing Algorithms</h2>
+        </div>
+        <div class="method-tabs" role="tablist">
+          <button class="tab-button active" data-tab="sha256">SHA-256</button>
+          <button class="tab-button" data-tab="md5">MD5</button>
+        </div>
+
+        <div class="tab-panel active" id="sha256">
+          <div class="method-grid">
+            <div class="method-form">
+              <label>Text</label>
+              <textarea id="sha-message" placeholder="Enter text"></textarea>
+              <div class="field-row counter-row"><span id="sha-count">0 characters</span></div>
+              <div class="button-row">
+                <button id="sha-generate">Generate SHA-256 Hash</button>
+                <button id="sha-clear" class="ghost">Clear</button>
+              </div>
+            </div>
+            <div class="method-output">
+              <h4>SHA-256 Hash</h4>
+              <textarea id="sha-result" readonly placeholder="64-character hexadecimal hash"></textarea>
+              <button data-copy="sha-result" class="copy-btn">Copy Hash</button>
+            </div>
+          </div>
+          <div class="visual-explanation">
+            <span>Input</span>
+            <span class="flow-arrow">↓</span>
+            <span>SHA-256</span>
+            <span class="flow-arrow">↓</span>
+            <span>256-bit Hash</span>
+          </div>
+          <p class="explanation-text">SHA-256 produces a 256-bit cryptographic hash and is widely used for integrity and verification.</p>
+        </div>
+
+        <div class="tab-panel" id="md5">
+          <div class="method-grid">
+            <div class="method-form">
+              <label>Text</label>
+              <textarea id="md5-message" placeholder="Enter text"></textarea>
+              <div class="field-row counter-row"><span id="md5-count">0 characters</span></div>
+              <div class="button-row">
+                <button id="md5-generate">Generate MD5 Hash</button>
+                <button id="md5-clear" class="ghost">Clear</button>
+              </div>
+            </div>
+            <div class="method-output">
+              <h4>MD5 Hash</h4>
+              <textarea id="md5-result" readonly placeholder="32-character hexadecimal hash"></textarea>
+              <button data-copy="md5-result" class="copy-btn">Copy Hash</button>
+            </div>
+          </div>
+          <div class="warning-card">
+            <strong>⚠️ Educational Use Only</strong>
+            <p>MD5 is cryptographically broken and should not be used for modern security-sensitive applications. It is included only for educational comparison.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section comparison-panel" id="comparison">
+        <div class="section-header">
+          <span>Comparison</span>
+          <h2>Encryption vs Hashing</h2>
+        </div>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Encryption</th>
+                <th>Hashing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Purpose</td><td>Confidentiality</td><td>Integrity / Verification</td></tr>
+              <tr><td>Reversible</td><td>Yes</td><td>No</td></tr>
+              <tr><td>Key</td><td>Usually required</td><td>Not required</td></tr>
+              <tr><td>Output</td><td>Ciphertext</td><td>Hash</td></tr>
+              <tr><td>Examples</td><td>AES, Caesar</td><td>SHA-256, MD5</td></tr>
+              <tr><td>Common Uses</td><td>Secure communication</td><td>Data verification</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flow-grid">
+          <div class="flow-card small">
+            <h4>Encryption Flow</h4>
+            <span>Plaintext</span>
+            <span class="flow-arrow">↓</span>
+            <span>Encryption + Key</span>
+            <span class="flow-arrow">↓</span>
+            <span>Ciphertext</span>
+            <span class="flow-arrow">↓</span>
+            <span>Decryption + Key</span>
+            <span class="flow-arrow">↓</span>
+            <span>Plaintext</span>
+          </div>
+          <div class="flow-card small">
+            <h4>Hashing Flow</h4>
+            <span>Data</span>
+            <span class="flow-arrow">↓</span>
+            <span>Hash Function</span>
+            <span class="flow-arrow">↓</span>
+            <span>Hash Value</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section summary-panel" id="summary">
+        <div class="section-header">
+          <span>Algorithms</span>
+          <h2>Algorithm Summary</h2>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-card">
+            <div class="icon">A</div>
+            <h4>Caesar Cipher</h4>
+            <p>Classical substitution cipher that shifts letters by a fixed offset.</p>
+            <span>Security: Low / Educational</span>
+          </article>
+          <article class="summary-card">
+            <div class="icon">V</div>
+            <h4>Vigenère Cipher</h4>
+            <p>Polyalphabetic substitution cipher using a repeating keyword.</p>
+            <span>Security: Low / Educational</span>
+          </article>
+          <article class="summary-card">
+            <div class="icon">+</div>
+            <h4>AES-256-GCM</h4>
+            <p>Modern symmetric encryption with authentication and confidentiality.</p>
+            <span>Security: Strong</span>
+          </article>
+          <article class="summary-card">
+            <div class="icon">#</div>
+            <h4>SHA-256</h4>
+            <p>Secure hash function producing a 256-bit output for verification.</p>
+            <span>Security: Strong</span>
+          </article>
+          <article class="summary-card">
+            <div class="icon">M</div>
+            <h4>MD5</h4>
+            <p>Legacy hash function included for educational comparison.</p>
+            <span>Security: Obsolete</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section notice-panel" id="security">
+        <div class="section-header">
+          <span>Notice</span>
+          <h2>Security Notice</h2>
+        </div>
+        <div class="notice-card">
+          <p>This webpage is an educational demonstration of cryptographic concepts. It runs primarily in the browser and should not be treated as a production-grade encryption system.</p>
+          <ul>
+            <li>Caesar Cipher is a classical educational cipher.</li>
+            <li>Vigenère Cipher is a classical educational cipher.</li>
+            <li>AES-GCM is a modern authenticated encryption method.</li>
+            <li>SHA-256 is a modern cryptographic hash function.</li>
+            <li>MD5 is obsolete for security-sensitive applications.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section about-panel" id="about">
+        <div class="section-header">
+          <span>About</span>
+          <h2>About This Project</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Project Description</h3>
+            <p>This project demonstrates fundamental concepts of encryption and hashing through interactive browser-based examples. It was developed as an academic project to understand how cryptographic algorithms transform and protect data.</p>
+          </div>
+          <div class="about-card">
+            <h3>Technologies Used</h3>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Web Crypto API</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Algorithms Demonstrated</h3>
+            <ul>
+              <li>Caesar Cipher</li>
+              <li>Vigenère Cipher</li>
+              <li>AES-256-GCM</li>
+              <li>SHA-256</li>
+              <li>MD5</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-panel">
+      <div>
+        <h3>🔐 CRYPTO LAB</h3>
+        <p>Learn • Encrypt • Hash • Understand</p>
+        <p>Educational Project – Encryption &amp; Hashing Techniques</p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
