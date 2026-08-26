@@ -129,7 +129,6 @@ encryption-hashing-project/
 ├── 📄 index.html
 ├── 🎨 style.css
 ├── ⚡ script.js
-├── 🖼️ SRM-logo.png
 └── 📖 README.md
 ```
 
