@@ -308,7 +308,7 @@ Through this project, users can gain practical knowledge about:
 
 ### Gonela Surya Teja
 
-**B.Tech Computer Science & Engineering**
+**B.Tech Computer Science & Engineering — SRM IST**
 
 ---
 
